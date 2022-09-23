@@ -97,23 +97,28 @@ class Mob:
       print("{name} received {damage} damage and now has {health} health!".format(name = self.name, damage = amount, health = self.health))  
 
 hero_one = Heroes("Hellendyre", "Paladin", 1)
-#hero_two = Heroes("Cerethor", "Death Knight", 1)
+hero_two = Heroes("Cerethor", "Death Knight", 1)
 
 weapon_sword_1 = Weapon("Training Sword", "Two-Handed Sword", 99, 65)
 weapon_1h_sword_1 = Weapon("Bastard Sword", "One-Handed Sword", 49, 65)
 
 mob_one = Mob("Brigand", 2, 300, 33)
 
-
-print(hero_one)
-#print(hero_two)
-
-hero_one.equip_weapon(weapon_sword_1)
+#hero_one.equip_weapon(weapon_sword_1)
 #hero_two.equip_weapon(weapon_1h_sword_1)
 
-hero_one.attack(mob_one)
-hero_one.attack(mob_one)
-hero_one.attack(mob_one)
-hero_one.attack(mob_one)
-hero_one.attack(mob_one)
 
+print("\n\nWelcome to the world of Newheim. Choose your character: \n \nHellendyre - a Paladin of the holy order \nCerethor - a Death knight risen to seek revenge\n")
+
+def hero_choice():
+  choice = input("Make your choice:")
+  if choice == "Hellendyre":
+    print("\nYou have chosen the Paladin. Slay your enemies with the power of the light!")
+    return hero_one
+  if choice == "Cerethor":
+    print("\nYou have chosen the Death Knight. Your enemies will tremble before your terrifying visage.")
+    return hero_two
+  else:
+    print("Please type the name correctly")
+
+active_hero = hero_choice()
