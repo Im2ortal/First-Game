@@ -90,7 +90,7 @@ class Mob:
     self.health -= amount
     if self.health <= 0:
       self.health = 0
-      self.death().
+      self.death()
 
     else:
       print("{name} received {damage} damage and now has {health} health!".format(name = self.name, damage = amount, health = self.health))  
