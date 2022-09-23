@@ -1,14 +1,12 @@
 class Heroes:
 
-  def __init__(self, name, hero_class, level, energy_type, energy):
+  def __init__(self, name, hero_class, level):
     self.name = name
     self.hero_class = hero_class
     self.level = level
     self.exp = 0
     self.exp_needed = (level / 0.07) ** 2
     self.health = (level * 0.3) ** 2
-    self.energy_type = energy_type
-    self.energy_type = energy
     self.isDead = False
     self.equipped_weapon = []
 
@@ -55,9 +53,11 @@ class Weapon:
     description = "{name} is a {weapon_type} that does {damage} damage and has {durability} durability left.".format(name = self.name, weapon_type = self.weapon_type, damage = self.damage, durability = self.durability)
     return description
 
-hero_one = Heroes("Hellendyre", "Paladin", 1, "Holy Power", 5)
+hero_one = Heroes("Hellendyre", "Paladin", 1)
+hero_two = Heroes("Cerethor", "Death Knight", 1)
 
 weapon_sword_1 = Weapon("Training Sword", "Two-Handed Sword", 99, 65)
+weapon_1h_sword_1 = Weapon("Bastard Sword", "One-Handed Sword", 49, 65)
 
 
 print(hero_one)
