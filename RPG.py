@@ -61,7 +61,7 @@ weapon_1h_sword_1 = Weapon("Bastard Sword", "One-Handed Sword", 49, 65)
 
 
 print(hero_one)
-print(weapon_sword_1)
+print(hero_two)
 
 hero_one.equip_weapon(weapon_sword_1)
-
+hero_two.equip_weapon(weapon_1h_sword_1)
