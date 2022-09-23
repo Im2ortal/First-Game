@@ -41,14 +41,15 @@ class Heroes:
     if self.isDead == True:
       print("{name} is not able to attach because he is dead.".format(name = self.name))
     if mob.health <= 0:
-      print("The {name} is dead, can't attack further.".format(name = mob.name))
+      #print("The {name} is dead, can't attack further.".format(name = mob.name))
+      self.exp_gain(mob)
     else:
       mob.losing_health(self.equipped_weapon[0].damage)
       print("{name} does {damage} damage. {mob_name} now has {health} health left.". format(name = self.name, damage = self.equipped_weapon[0].damage, mob_name = mob.name, health = mob.health))
     
   def exp_gain(self, mob):
     self.exp += mob.base_exp
-    print("You have {exp} expirience and need {more} more to level up.".format(exp = self.exp, more = self.exp_needed - self.exp))
+    print("You have {exp} experience and need {more} more to level up.".format(exp = self.exp, more = self.exp_needed - self.exp))
 
   def level_up(self):
     if self.exp >= self.exp_needed:
@@ -96,7 +97,7 @@ class Mob:
       print("{name} received {damage} damage and now has {health} health!".format(name = self.name, damage = amount, health = self.health))  
 
 hero_one = Heroes("Hellendyre", "Paladin", 1)
-hero_two = Heroes("Cerethor", "Death Knight", 1)
+#hero_two = Heroes("Cerethor", "Death Knight", 1)
 
 weapon_sword_1 = Weapon("Training Sword", "Two-Handed Sword", 99, 65)
 weapon_1h_sword_1 = Weapon("Bastard Sword", "One-Handed Sword", 49, 65)
@@ -105,10 +106,10 @@ mob_one = Mob("Brigand", 2, 300, 33)
 
 
 print(hero_one)
-print(hero_two)
+#print(hero_two)
 
 hero_one.equip_weapon(weapon_sword_1)
-hero_two.equip_weapon(weapon_1h_sword_1)
+#hero_two.equip_weapon(weapon_1h_sword_1)
 
 hero_one.attack(mob_one)
 hero_one.attack(mob_one)
