@@ -8,7 +8,7 @@ class Heroes:
     self.exp_needed = (level / 0.07) ** 2
     self.health = (level * 0.3) ** 2
     self.isDead = False
-    self.equipped_weapon = []
+    self.equipped_weapon = []dsd
 
   def __repr__(self):
     description = "{name} is a {hero_class}, level {level}. To level up {name} needs {exp} experience.".format(name = self.name, hero_class = self.hero_class, level = self.level, exp = self.exp_needed)
@@ -52,6 +52,13 @@ class Weapon:
   def __repr__(self):
     description = "{name} is a {weapon_type} that does {damage} damage and has {durability} durability left.".format(name = self.name, weapon_type = self.weapon_type, damage = self.damage, durability = self.durability)
     return description
+
+class Mob:
+
+  def __init__(self, name, damage, health):
+    self.name = name
+    self.damage = damage
+    self.health = health
 
 hero_one = Heroes("Hellendyre", "Paladin", 1)
 hero_two = Heroes("Cerethor", "Death Knight", 1)
