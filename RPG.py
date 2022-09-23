@@ -42,13 +42,15 @@ class Heroes:
       mob.losing_health(self.equipped_weapon[0].damage)
       print("{name} does {damage} damage. {mob_name} now has {health} health left.". format(name = self.name, damage = self.equipped_weapon[0].damage, mob_name = mob.name, health = mob.health))
     
-
-  def exp_gain(mob):
+  def exp_gain(self, mob):
     self.exp += mob.base_exp
     print("You have {exp} expirience and need {more} more to level up.".format(exp = self.exp, more = self.exp_needed - self.exp))
 
-  def level_up():
-    pass
+  def level_up(self):
+    if self.exp >= self.exp_needed:
+      self.level += 1
+      self.exp = 0
+      print("{name} has leveled up and is now level {level}!".format(name = self.name, level = self.level))
 
 class Weapon:
   
