@@ -107,7 +107,6 @@ mob_one = Mob("Brigand", 2, 300, 33)
 #hero_one.equip_weapon(weapon_sword_1)
 #hero_two.equip_weapon(weapon_1h_sword_1)
 
-
 print("\n\nWelcome to the world of Newheim. Choose your character: \n \nHellendyre - a Paladin of the holy order \nCerethor - a Death knight risen to seek revenge\n")
 
 def hero_choice():
